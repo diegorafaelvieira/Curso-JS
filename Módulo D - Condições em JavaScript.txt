@@ -1,1 +1,34 @@
 #11
+
+//Extensão Node Exec -> F8 para executar
+
+CONDIÇÕES (PARTE 1)
+
+->Sequências
+//Atribuindo valor
+var n = 3
+//Adicionando mais 2
+n += 2
+//Exibir na forma de janela o valor
+window.alert(n)
+
+->Condições
+if(condição) {
+  //Bloco true
+} else {
+  //Bloco false
+}
+
+
+->Tipos de Condição
+//Condição simples
+if(condição) {
+   true
+}
+
+//Condição  
+if(condição) {
+  true
+} else {
+  false
+}
