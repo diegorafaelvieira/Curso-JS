@@ -1,0 +1,84 @@
+#09
+
+VsCode Extensões
+-Watch in Chrome    ctrl+shift+p Watch in Chrome
+-Node Exec
+
+Extensão Navegador Chrome
+-VS Code Watch
+
+O que é DOM?
+Modelo de Objetos para Documentos
+
+->Árvore DOM
+          window
+     |        |       |
+ location document history
+              |
+            html
+          |       |
+        head     body
+        |  |      |  | |  |
+     meta title   h1 p p div
+		       |
+                      strong
+
+->Selecionando 
+
+*por Marca(tag)
+getElementsByTagName()
+innerText: pega o texto sem a formatação
+innerHtml: pega o html inteiro, inclusive as tags filhas
+var p1 = window.document.getElementsByTagName('p')[0]
+
+*por ID
+getElementById() paragrafo,div
+var d = window.document.getElementById('msg')
+d.style.background = 'green' //Aqui faço a cor da DIV ficar verde
+d.innerText = 'Estou aguardando...'
+
+*por Nome
+getElementsByName()    obs: quando tem 's' é preciso utilizar os []pra selecionar
+var d = window.document.getElementsByName('msg')[0]
+d.innerText = 'Olá'
+
+*por Classe
+getElementsByClassName() 
+window.document.getElementByClassName
+
+*por Seletor(css)
+querySelector()
+querySelectorAll()  ->plural
+var d = window.document.querySelector('div#msg')
+d.style.color = 'blue'
+
+obs:
+DIV é representada por #
+Class é representada por .
+
+
+*************************************************************************************
+
+#10
+
+Eventos DOM
+->Evento: tudo o que pode acontecer
+
+->Eventos do mouse
+-mouseenter: mouse entrou da div
+-mousemove: mover mouse dentro da div
+-mousedown: clicar no mouse 
+-mouseup: solto o botão do mouse
+-click: apertar e soltar o botão do mouse rapidamente
+-mouseout: mouse sai da div
+
+->Função: conjunto de códigos(bloco) que vão ser executadas quando o evento ocorrer
+
+->Nomes das funções são uma ação
+	function ação() {
+
+	}
+
+
+
+

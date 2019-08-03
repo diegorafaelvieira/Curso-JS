@@ -1,0 +1,74 @@
+#01
+
+//Assim altero o fundo do site para Preto
+document.body.style.background = 'black'
+
+
+//Assim deixo o site em Preto e Branco
+document.querySelector('img#hplogo').style.filter = 'grayscale(100%)'
+
+//Assim removo o Logo
+document.querySelector('img#hplogo').style.visibility = 'hidden'
+
+//Limpar Console Navegador 
+crtl + l 
+
+//Assim mudo o título da notícia no G1
+document.querySelector('span.bstn-hl.title').innerText = 'Curso em Vídeo de Javascript é o melhor do Youtube!'
+
+*********************************************************************************************
+#03
+Livros: JavaScript o guia definitivo / JavaScript Guia do Programador
+
+Downloads:
+Navegador: Google Chrome
+Editor: VsCode
+        Node.js
+
+//Sair do Node.js
+.exit
+
+*********************************************************************************************
+#04
+HEAD-> configurações
+BODY-> parte branca navegador
+h1-> título de nível h1
+p-> paragrafo
+style-> onde fica o CSS
+script-> onde fica o código JS
+JS-> o uso de ; não é obrigatório no final
+
+//código
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meu primeiro programa...</title>
+    <style>
+        body {
+            background-color: rgb(47, 109, 243);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: rgb(252, 252, 16);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+        window.alert('Minha primeira mensagem!')
+        window.confirm('Está gostando de JS?')
+        window.prompt('Qual é o seu nome?')
+    </script>
+</body>
+</html>
+******************************************************************************************************
+
+
+ 
+ 

@@ -1,0 +1,219 @@
+#05
+ //Alerta
+ window.alert()
+ //Confirmação OK/Cancel
+ window.confirm()
+ //Solicitar preenchimento do usuário
+ window.prompt()
+
+ //Comentários em JS
+ //      uma única linha
+ /*   */ mais de uma linha de código
+
+ Um único sinal de igual -> RECEBE
+ vaga a1 = carro1    vaga a1 RECEBE carro1
+
+ // Deixar vaga NULA     
+ a1 = null
+
+ No JavaScript moderno, além de utilizar a palavra var, também podemos usar
+a palavra let
+ var n1 = 5    var s1 = "JavaScript"
+ var n2 = 8.5  var s2 = 'Curso em Vídeo'
+ var n3 = 15   var s3 = `Guanabara`   
+               Em JS posso utilizar os 3 tipos de aspas
+
+ *IDENTIFICADORES: nome de uma variavel
+  Podem começar com: letra, $ ou _
+  Não podem começar com números
+  É possível usar letras ou números
+  É possível usar acentos e símbolos
+  Não podem conter espaços
+  Não podem ser palavras reservadas Ex: function,alert,var,...
+
+ *DICAS:
+  Maiúsculas e minúsculas fazem diferença
+  Tente escolher nomes coerentes para as variáveis
+  Evite se tornar um 'programador alfabeto' ou 'programador contador' 
+
+ *Abrir Node.js no VsCode -> Terminal -> New terminal 
+  Dígito node para entrar no Node
+  para sair do Node.js dígito .exit
+  para sair do TERMINAL dígito exit
+  //Limpar tela -> ctrl + l 
+
+  *Data Types:
+  -> Number (Infinity,NaN)
+  5  18  -12 int
+  0.5 -15.9 3.14 8.0 float
+
+  -> String 
+  "Google" 'JavaScript' `Maria`
+  
+  -> Boolean
+  true false
+  
+  //Para saber qual o tipo basta digitar:
+  typeof nomeVariavel
+
+  //Passar pelo histórico no terminal 
+  seta para cima ou para baixo
+
+**********************************************************************************
+
+#06
+ //Observação
+  window.prompt trata como uma string
+
+ // number + number para adição 
+ // string + string para concatenação
+
+ //Converter de String para Número
+  Number.parseInt(n)  INTEIRO
+  Number.parseFloat(n) REAL
+  Number(n)
+
+ //Converter de Número para String
+ String(n)
+ n.toString()
+
+ //Formatando String
+ var s = 'JavaScript'
+ 'Eu estou aprendendo s'   //não faz interpolação
+ 'Eu estou aprendendo' + s //usa concatenação
+ `Eu estou aprendendo ${s}` //usa template string  PLACEHOLDER
+ `O aluno ${nome} com ${idade} anos tirou nota ${nota}`
+  
+ s.length  //quantos caracteres a string tem
+ s.toUpperCase()  //Jogar para letras MAIÚSCULAS
+ s.toLowerCase()  //Jogar para letras MINÚSCULAS
+
+ //Formatando Números
+ var n1 = 1543.5
+ n1.toFixed(2) //Imprime com 2 casas após a vírgula
+ n1.toFixed(2).replace('.',',') //Troca o . por ,
+ 
+ //Formatar para REAL R$
+ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})
+ //Formatar para DÓLAR US$
+ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'USD'})
+ //Formatar para EURO 
+ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'EUR'})
+ 
+**********************************************************************
+
+#07
+OPERADORES pt1
+->Aritméticos
+ 5 + 2 = 7
+ 5 - 2 = 3
+ 5 * 2 = 10
+ 5 / 2 = 2.5
+ 5 % 2 = 1
+ 5 ** 2 = 25
+
+*Precedência (ORDEM OPERADORES ARITMÉTICOS)
+ ()
+ **
+ * / %
+ + -
+
+->Atribuição 
+*Atribuição Simples
+var a = 5 + 3 -> 8
+var b = a % 5 -> 3
+var c = 5 * b ** 2 -> 45
+var d = 10 - a / 2 -> 6
+var e = 6 * 2 / d -> 2
+var f = b % e + 4 / e -> 3
+
+*Auto-atribuições   Simplificando
+var n = 3 -> 3
+n = n + 4 -> 7      n += 4
+n = n - 5 -> 2	    n -= 5
+n = n * 4 -> 8      n *= 4
+n = n / 2 -> 4      n /= 2
+n = n ** 2 -> 16    n **= 2
+n = n % 5 -> 1      n %= 5
+
+*Incremento
+var x = 5 ->5
+x = x + 1 ->6      x += 1   x++
+x = x - 1 ->5      x -= 1   x--
+
+
+**********************************************************************
+
+#08
+OPERADORES pt2
+->Relacionais
+ > maior
+ < menor 
+ >= maior ou igual 
+ <= menor ou igual
+ == igual
+ != diferente
+
+ 5 > 2 -> true
+ 7 < 4 -> false
+ 8 >= 8 -> true
+ 9 <= 7 -> false
+ 5 == 5 -> true
+ 4 != 4 -> false
+
+ //Exemplos
+ preco >= 200.50	O preço é maior ou igual a 200.50?
+ idade < 18 		A idade é menor que 18?
+ curso == 'JavaScript'  O Curso é JavaScript?
+ n1 != n2 		O primeiro número é diferente do segundo?
+
+ *Identidade
+ 5 == 5 -> true
+ 5 == '5' -> true (JS é igual)
+ 5 === '5' -> false (testa se são identicos/mesmo tipo)
+ 5 === 5 -> true (mesmo tipo)
+
+->Lógicos
+ !  Negação
+ && Conjunção (E)
+ || Disjunção (OU)
+
+ *Negação
+ !true -> false
+ !false -> true
+
+ *Conjunção (E)
+ true&&true -> true
+ true&&false -> false
+ false&&true -> false
+ false&&false -> false
+
+ *Disjunção (OU)
+ true||true -> true
+ true||false -> true
+ false||true -> true
+ false||false -> false
+
+	ORDEM
+ 1) Aritméticos     1)Não
+ 2) Relacionais     2)E
+ 3) Lógicos	    3)OU
+
+ //Exemplos
+ idade >= 15 && idade <= 17       A idade está entre 15 e 17?  
+ estado == 'RJ' || estado == 'SP' O estado é RJ ou SP? 
+ salario > 1500 && sexo != 'M'    O salário é acima de 1500 e não é homem?
+
+ *Precedência
+ () ** / ...
+ > < >= ...
+ ! 
+ &&
+ ||
+
+
+->Ternário
+   ? :
+ teste ? true : false
+ //Exemplo
+ media >= 7.0 ? "Aprovado" : "Reprovado"
