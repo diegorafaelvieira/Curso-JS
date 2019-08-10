@@ -1,6 +1,6 @@
 #11
 
-//Extensão Node Exec -> F8 para executar
+//Extensão Node Exec -> F8 para executar SÓ JS
 
 CONDIÇÕES (PARTE 1)
 
@@ -26,9 +26,200 @@ if(condição) {
    true
 }
 
-//Condição  
+//Condição Composta 
 if(condição) {
   true
 } else {
   false
 }
+
+
+//Códigos
+//ex008.js
+var vel = 78.2
+console.log(`A velocidade do seu carro é ${vel} km/h`)
+if( vel > 60) { //Condição simples
+    console.log(`Você ultrapassou a velocidade permitida. MULTADO!`)
+}
+console.log(`Dirija sempre utilizando cinto de segurança!`)
+
+######################################################################
+
+//ex009.js
+//Condição Composta
+var país = 'França'
+console.log(`Vivendo em ${país}`)
+if(país == 'Brasil') {
+    console.log(`Você é Brasileiro!`)
+} else {
+    console.log(`Você é Estrangeiro!`)
+}
+
+######################################################################
+
+//010.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistemas de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel">Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular() {
+            var txtv = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            if (vel > 60) {
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>
+
+############################################################################
+
+ex009b.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Nacionalidade: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var txtnac = window.document.querySelector('input#txtnac')
+            var res = window.document.querySelector('div#res')
+            var país = (txtnac.value)
+            res.innerHTML = `País informado:<strong>${país}</strong></p>`
+            if (país == 'Brasil') {
+                res.innerHTML += `<p>Você é <strong>Brasileiro(a)</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>Estrangeiro(a)</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
+
+###########################################################################
+
+#12 
+	CONDIÇÕES (PARTE 2)
+
+->Condições Aninhadas  //Testar intervalos ->IF
+if(cond1) {
+   bloco 1
+} else {
+   if(cond2) {
+	bloco 2
+   } else {
+ 	bloco 3
+   }
+}
+
+->Condição Múltipla     //Testar valores pontuais ->SWITCH(num inteiros 1 e caracteres 'a')
+switch(expressão) { 
+  case valor1:
+
+	break
+  case valor2:
+
+	break
+  case valor3:
+
+	break
+  default:
+
+	break
+}
+
+
+//Códigos
+
+//ex011.js
+var idade = 22
+console.log(`Você tem ${idade} anos.`)
+if (idade < 16) {
+    console.log('Não vota')
+} else if (idade < 18 || idade > 65)  {
+    console.log('Voto opcional')
+} else {
+    console.log('Voto obrigatório')
+}
+#################################################################################
+//ex012.js
+var agora = new Date() //Pegar Data
+var hora = agora.getHours(); //Pegar Hora da Data
+console.log(`Agora são exatamente ${hora} horas.`)
+if (hora < 12) {
+    console.log(`Bom Dia!`)
+} else if (hora <= 18) {
+    console.log(`Boa Tarde!`)
+} else {
+    console.log(`Boa Noite!`)
+}
+#################################################################################
+//ex013.js
+var agora = new Date() //Pegar Data
+var diaSem = agora.getDay() //Pegar Dia da Data
+/*
+    0 = Domingo
+    1 = Segunda
+    2 = Terça
+    3 = Quarta
+    4 = Quinta
+    5 = Sexta
+    6 = Sábado
+*/
+
+//console.log(diaSem)
+
+switch (diaSem) {
+    case 0:
+        console.log('Domingo')
+        break
+    case 1:
+        console.log('Segunda')
+        break
+    case 2:
+        console.log('Terça')
+        break
+    case 3:
+        console.log('Quarta')
+        break
+    case 4:
+        console.log('Quinta') 
+        break
+    case 5:
+        console.log('Sexta')
+        break
+    case 6:
+        console.log('Sábado')
+        break
+    default:
+        console.log('Erro!Dia inválido!')
+        break
+}
+#################################################################################
+
