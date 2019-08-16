@@ -292,3 +292,100 @@ footer {
 alert('Olá!')
 ##############################################################################################
 
+#13
+	EXERCÍCIOS JAVASCRIPT (PARTE 2)
+ 1 - Criar uma pasta chamada modelo dentro da pasta Aula 13
+ 2 - Recortar os arquivos estilo.css,modelo.html e  script.js e colar dentro dessa parta modelo
+ 3 - Criar uma pasta chamada ex014
+ 4 - Colar os mesmos arquivos dentro dela juntamente das imagens (Editar Photoshop) 250 x 250
+     fotomanha,fototarde e fotonoite
+      site-> https://www.pexels.com/pt-br
+
+//Códigos
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora do Dia</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            Aqui vai aparecer a mensagem...
+        </div>
+        <div id="foto">
+            <img id="imagem" src="fotomanha.png" alt="Foto do dia">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+############################################################################
+estilo.css
+body {
+    background: rgb(107, 142, 236); /* fundo */
+    font: normal 15pt Arial; /* config texto */
+}
+
+header {
+    color: white; /* cor texto*/
+    text-align: center; /* texto centralizado  */
+}
+
+section {
+    background: white; /* fundo */
+    border-radius: 10px; /* bordas redondas*/
+    padding: 15px; /* espaçamento */
+    width: 500px; /* largura */
+    margin: auto; /* centralizar na tela */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363); /* sombra na parte inferior */
+
+}
+
+div {
+    text-align: center; /* texto centralizado */
+    padding: 8px; /* espaçamento */
+}
+
+footer {
+    color: white;
+    text-align: center; 
+    font-style: italic; /* texto itálico */
+}
+#################################################################################
+//script.js
+function carregar() {
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('imagem') 
+    var data = new Date()
+    var hora = data.getHours()+":"+data.getMinutes()
+    msg.innerHTML=`Agora são ${hora} horas.`
+
+    if (hora >= 0 && hora < 12) {
+        //BOM DIA
+        img.src = 'fotomanha.png'
+        document.body.style.background = '#e2cd9f'
+    } else if (hora >= 12 && hora <= 18 ) {
+        //BOA TARDE
+        img.src = 'fototarde.png'
+        document.body.style.background = '#b9846f'
+    } else {
+        //BOA NOITE
+        img.src = 'fotonoite.png'
+        document.body.style.background = '#515154'
+    }
+}
+
+
+#############################################################################
+
+ 
