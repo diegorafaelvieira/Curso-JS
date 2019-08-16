@@ -224,4 +224,71 @@ switch (diaSem) {
 #################################################################################
 
 #13
-	
+	EXERCÍCIOS JAVASCRIPT (PARTE 1)
+
+Dica: segurar ctrl e clicar com o mouse em cima de estilo.css -> create file
+      js -> script src -> create file
+
+//Códigos
+
+//modelo.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Título</h1>
+    </header>
+    <section>
+        <div>
+            Testando...
+        </div>
+        <div>
+            Olá
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+#############################################################################################
+//estilo.css
+body {
+    background: rgb(107, 142, 236); /* fundo */
+    font: normal 15pt Arial; /* config texto */
+}
+
+header {
+    color: white; /* cor texto*/
+    text-align: center; /* texto centralizado  */
+}
+
+section {
+    background: white; /* fundo */
+    border-radius: 10px; /* bordas redondas*/
+    padding: 15px; /* espaço */
+    width: 500px; /* largura */
+    margin: auto; /* centralizar na tela */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363); /* sombra na parte inferior */
+
+}
+
+footer {
+    color: white;
+    text-align: center; 
+    font-style: italic; /* texto itálico */
+}
+##############################################################################################
+
+//script.js
+alert('Olá!')
+##############################################################################################
+
