@@ -295,7 +295,7 @@ alert('Olá!')
 #13
 	EXERCÍCIOS JAVASCRIPT (PARTE 2)
  1 - Criar uma pasta chamada modelo dentro da pasta Aula 13
- 2 - Recortar os arquivos estilo.css,modelo.html e  script.js e colar dentro dessa parta modelo
+ 2 - Recortar os arquivos estilo.css,modelo.html e  script.js e colar dentro dessa pasta modelo
  3 - Criar uma pasta chamada ex014
  4 - Colar os mesmos arquivos dentro dela juntamente das imagens (Editar Photoshop) 250 x 250
      fotomanha,fototarde e fotonoite
