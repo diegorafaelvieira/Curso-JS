@@ -1,0 +1,98 @@
+#13
+
+While -> ENQUANTO
+
+while(condição) {
+  BLOCO 
+}
+
+function comerPizza() {
+  
+  while(temFatia()) {
+    comerFatia()
+  }    
+
+}
+
+//EXECUTA E DEPOIS TESTA O BLOCO
+console.log(`DO WHILE`)
+var c = 1
+do{
+    console.log(`Tudo bem? ${c}`)
+    c++   
+} while (c <= 6)
+
+//TESTA E DEPOIS EXECUTA O BLOCO
+console.log(`WHILE`)
+var c = 1
+while (c <= 6) {
+    console.log(`Tudo bem? ${c}`)
+   c++  // c = c + 1 
+}
+
+Tudo bem? 1
+Tudo bem? 2
+Tudo bem? 3
+Tudo bem? 4
+Tudo bem? 5
+Tudo bem? 6
+
+
+/*
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+console.log('Tudo bem?')
+*/
+
+##############################################################################################
+
+#14
+
+for(inicio; teste; incr){
+  BLOCO
+}
+
+//COM WHILE
+var c = 1
+while(c <= 10){
+ BLOCO 
+ c++
+}
+
+//COM FOR
+for(var c=1;c<=10;c++){
+  BLOCO  
+}
+
+//CÓDIGO
+console.log('VAI COMEÇAR...')
+
+
+console.log('WHILE')
+var c = 1
+while (c <= 5){
+    console.log(c)
+    c++
+}
+
+
+console.log('FOR')
+for(var c = 1; c <= 5;c++){
+    console.log(c)
+}
+
+console.log('FIM!')
+
+/*
+DEBUGAR
+DEBUG->Start Debugging
+
+Watch do c
+pressionar f10 até o fim 
+*/
+
+###############################################################################################
+

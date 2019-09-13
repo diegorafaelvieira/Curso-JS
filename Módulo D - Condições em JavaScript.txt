@@ -223,7 +223,7 @@ switch (diaSem) {
 }
 #################################################################################
 
-#13
+#12
 	EXERCÍCIOS JAVASCRIPT (PARTE 1)
 
 Dica: segurar ctrl e clicar com o mouse em cima de estilo.css -> create file
@@ -292,9 +292,9 @@ footer {
 alert('Olá!')
 ##############################################################################################
 
-#13
+#12
 	EXERCÍCIOS JAVASCRIPT (PARTE 2)
- 1 - Criar uma pasta chamada modelo dentro da pasta Aula 13
+ 1 - Criar uma pasta chamada modelo dentro da pasta Aula 12
  2 - Recortar os arquivos estilo.css,modelo.html e  script.js e colar dentro dessa pasta modelo
  3 - Criar uma pasta chamada ex014
  4 - Colar os mesmos arquivos dentro dela juntamente das imagens (Editar Photoshop) 250 x 250
@@ -388,4 +388,129 @@ function carregar() {
 
 #############################################################################
 
- 
+ #12
+	EXERCÍCIOS JAVASCRIPT (PARTE 3)
+ 1 - Criar uma pasta chamada modelo dentro da pasta Aula 12
+ 2 - Recortar os arquivos estilo.css,modelo.html e  script.js e colar dentro dessa pasta modelo
+ 3 - Criar uma pasta chamada ex015
+ 4 - Colar os mesmos arquivos dentro dela juntamente das imagens (Editar Photoshop) 250 x 250
+     com as fotos m e f para bebê,jovem,adulto e idoso
+      site-> https://www.pexels.com/pt-br
+
+//Códigos
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+           <p>Ano de Nascimento:
+               <input type="number" name="txtano" id="txtano" min="0">
+           </p>
+           <p>Sexo:
+               <input type="radio" name="radsex" id="mas" checked>
+               <label for="mas">Masculino</label>
+               <input type="radio" name="radsex" id="fem">
+               <label for="fem">Feminino</label>
+           </p>
+           <p>
+               <input type="button" value="Verificar" onclick="verificar()">
+           </p>
+        </div>
+        <div id="res">
+            Preencha os dados acima para ver o resultado
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+######################################################################################################
+estilo.css
+body {
+    background: rgb(107, 142, 236); /* fundo */
+    font: normal 15pt Arial; /* config texto */
+}
+
+header {
+    color: white; /* cor texto*/
+    text-align: center; /* texto centralizado  */
+}
+
+section {
+    background: white; /* fundo */
+    border-radius: 10px; /* bordas redondas*/
+    padding: 15px; /* espaço */
+    width: 500px; /* largura */
+    margin: auto; /* centralizar na tela */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363); /* sombra na parte inferior */
+
+}
+
+footer {
+    color: white;
+    text-align: center; 
+    font-style: italic; /* texto itálico */
+}
+########################################################################################################
+function verificar() {
+    var data = new Date()
+    var ano = data.getFullYear() //Pega ANO ATUAL com 4 dígitos
+    var fano = document.getElementById('txtano')
+    var res = document.querySelector('div#res')
+    if(fano.value.length == 0 || Number(fano.value) > ano) {
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
+    } else {
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
+        var genero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (fsex[0].checked) { //Verifica o SEXO se é Masculino
+            genero = 'Homem'
+            if (idade >= 0 && idade < 10) {
+                //Criança
+                img.setAttribute('src', 'foto-bebe-m.png')
+            } else if (idade < 21) {
+                //Jovem
+                img.setAttribute('src', 'foto-jovem-m.png')
+            } else if(idade < 50) {
+                //Adulto
+                img.setAttribute('src', 'foto-adulto-m.png')
+            } else {
+                //Idoso
+                img.setAttribute('src', 'foto-idoso-m.png')
+            }
+        } else if (fsex[1].checked) { //Verifica o SEXO se é Feminino
+            genero = 'Mulher'
+            if (idade >= 0 && idade < 10) {
+                //Criança
+                img.setAttribute('src', 'foto-bebe-f.png')
+            } else if (idade < 21) {
+                //Jovem
+                img.setAttribute('src', 'foto-jovem-f.png')
+            } else if(idade < 50) {
+                //Adulto
+                img.setAttribute('src', 'foto-adulto-f.png')
+            } else {
+                //Idoso
+                img.setAttribute('src', 'foto-idoso-f.png')
+            }
+        }
+        res.style.textAlign = 'center' //Centralizar Texto
+        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+        res.appendChild(img) //add foto
+    }
+}
+#####################################################################################################
