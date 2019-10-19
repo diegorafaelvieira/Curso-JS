@@ -346,6 +346,3 @@ amigo.engordar(2) /* Aqui engorda 2 kg */
 
 console.log(`${amigo.nome} pesa agora ${amigo.peso} kg`)
 ###################################################################################################
-
-
-FIM
