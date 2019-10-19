@@ -13,3 +13,5 @@ if (pos2 == -1) {
 } else {
     console.log(`O valor está na posição ${pos2}`)
 }
+
+/** Comentário qualquer */

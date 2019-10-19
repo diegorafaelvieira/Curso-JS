@@ -1,13 +1,14 @@
-#15
--->Vari�veis Compostas
-*Vari�veis simples: s� conseguem armazenar um valor por vez.
-*Vari�veis compostas: capazes de armazenar v�rios valores em uma mesma estrutura
+﻿#15 VARIÁVEIS COMPOSTAS
+
+-->Variáveis Compostas
+*Variáveis simples: só conseguem armazenar um valor por vez.
+*Variáveis compostas: capazes de armazenar vários valores em uma mesma estrutura
 
 ex: ARRAY/VETOR
-vaga a = [carro1,carro2,carro3] CADA CARRO � UM ELEMENTO
-            0       1      2    CADA POSI��O � UM �NDICE
+vaga a = [carro1,carro2,carro3] CADA CARRO É UM ELEMENTO
+            0       1      2    CADA POSIÇÃO É UM ÍNDICE
 
-OBS: UM ARRAY � UMA VARI�VEL QUE TEM V�RIOS ELEMENTOS, CADA ELEMENTO � COMPOSTO PELO O SEU VALOR E POR UMA CHAVE DE IDENTIFICA��O
+OBS: UM ARRAY É UMA VARIÁVEL QUE TEM VÁRIOS ELEMENTOS, CADA ELEMENTO É COMPOSTO PELO O SEU VALOR E POR UMA CHAVE DE IDENTIFICAÇÃO
 
 -> No JavaScript
 let num = [5, 8, 4]
@@ -16,7 +17,7 @@ let num = [5, 8, 4]
 num[3] = 6     ->  num = [5, 8, 4, 6]
 
 
-//colocar na �LTIMA POSI��O
+//colocar na ÚLTIMA POSIÇÃO
 num.push(7)      -> num = [5, 8, 4, 6, 7]
                            0  1  2  3  4  
 
@@ -33,26 +34,26 @@ for(let pos = 0; pos < num.length; pos++) {
 
 
 //Pocura no vetor onde esta o valor 7
-num.indexOf(7)       caso o valor n�o existir vai retornar -1
+num.indexOf(7)       caso o valor não existir vai retornar -1
 
 
 
-//C�digos
+//Códigos
 ambiente.js
 let num = [5,  8,  2,  9,  3]
 
-num.push(1)/* Aqui coloco o valor 1 na �ltima posi��o do array*/ 
+num.push(1)/* Aqui coloco o valor 1 na última posição do array*/ 
 num.sort() /* Aqui ordena o array */
 console.log(num) //Exibe array
-console.log(`O vetor tem ${num.length} posi��es`) //exibe o tamanho do array
-console.log(`O primeiro valor do vetor � ${num[0]}`) //exibe o 1� valor do array
+console.log(`O vetor tem ${num.length} posiçõees`) //exibe o tamanho do array
+console.log(`O primeiro valor do vetor é ${num[0]}`) //exibe o 1º valor do array
 let pos = num.indexOf(8) //Pocura no vetor onde esta o valor 8
-console.log(`O valor 8 est� na posi��o ${pos}`) //Exibe a posi��o do valor 8
-let pos2 = num.indexOf(4) // Aqui procuro um valor que n�o existe no array
+console.log(`O valor 8 está na posição ${pos}`) //Exibe a posição do valor 8
+let pos2 = num.indexOf(4) // Aqui procuro um valor que não existe no array
 if (pos2 == -1) {
-    console.log(`O valor 4 n�o foi encontrado`)
+    console.log(`O valor 4 não foi encontrado`)
 } else {
-    console.log(`O valor est� na posi��o ${pos2}`)
+    console.log(`O valor está na posição ${pos2}`)
 }
 
 
@@ -60,21 +61,291 @@ if (pos2 == -1) {
 vetornatela.js
 let valores =[8, 1, 7,  2, 9 ]
 
-//Forma padr�o de execu��o
+//Forma padrão de execução
 console.log(valores)
 
 /* Mostrar na tela com FOR*/ 
 for(let pos = 0; pos <valores.length; pos++) {
-	console.log(`A posi��o ${pos} tem o valor ${valores[pos]}`)
+	console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 }
 
 // Jeito mais simplificado FOR IN
 for(let pos in valores) {
-    console.log(`A posi��o ${pos} tem o valor ${valores[pos]}`)
+    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 } 
 
 
 #############################################################################################################
 
+# 16 - FUNÇÕES
+
+Função: 
+* 1 chamada
+* 1 conjunto de parâmetros
+* 1 ação
+* 1 retorno
+obs: nem toda função possuí parâmetro e retorno
+
+Funções: são AÇÕES executadas assim que são CHAMADAS ou em decorrência de algum EVENTO.
+
+Uma função pode receber parâmetros e retornar um resultado.
 
 
+
+function ação(parâmetro) {
+ 		   ^
+  return resultado |
+   --------        |		   
+}  |		   |
+   V		   |
+ação(5) -----------
+chamada
+
+//Exemplo
+function parimp(n) {
+
+  if (n%2==0) {
+    return 'par'
+  } else {
+    return 'ímpar'
+  }
+}
+let res = parimp(11)
+
+-----------------------------------------------------------------------------------------
+//funcao01.js
+function parimpar(n){
+    if (n % 2 == 0) {
+        return 'Par'
+    } else {
+        return 'Ímpar'
+    }
+}
+
+let res = parimpar(11)
+console.log(res)
+console.log(parimpar(4))
+-----------------------------------------------------------------------------------------
+//funcao02.js
+function soma(n1=0, n2=0) { // = 0 caso não passe um valor para evitar o NaN
+    return n1 + n2 
+}
+
+console.log(soma(2, 5))
+-----------------------------------------------------------------------------------------
+//funcao03.js
+let v = function (x) { // função dentro de uma variável
+    return x * 2
+}
+
+console.log(v(5))
+-----------------------------------------------------------------------------------------
+//funcao04.js
+// 5! = 5*4*3*2*1 = 120
+function fatorial(num) {
+    let fat = 1
+    for(let cont = num; cont > 1;cont--) {
+        fat *= cont
+    }
+    return(fat)
+}
+
+console.log(fatorial(5))
+------------------------------------------------------------------------------------------
+//funcao05.js
+//função recursiva
+function fatorial(n) {
+    if (n == 1) {
+        return 1
+    } else {
+        return n * fatorial(n-1)
+    }
+}
+
+console.log(fatorial(5))
+
+/*
+n! = n * (n-1)!
+1! = 1
+*/
+
+############################################################################################
+
+#EXERCÍCIO 7
+ 
+//Códigos
+
+modelo.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+    <section>
+        <div>
+            
+            Número (entre 1 e 100):
+            <input type="number" name="fnum" id="fnum">
+            <input type="submit" value="Adicionar" onclick="adicionar()"><br/><br/>
+            <select name="flista"id="flista" size="6"></select>
+            <br/>
+            <input type="submit"value="Finalizar" onclick="finalizar()">
+        </div>
+        <div>
+            <div id="res">
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+------------------------------------------------------------------------------------------------
+estilo.css
+body {
+    background: rgb(107, 142, 236); /* fundo */
+    font: normal 15pt Arial; /* config texto */
+}
+
+header {
+    color: white; /* cor texto*/
+    text-align: center; /* texto centralizado  */
+}
+
+section {
+    background: white; /* fundo */
+    border-radius: 10px; /* bordas redondas*/
+    padding: 15px; /* espaço */
+    width: 500px; /* largura */
+    margin: auto; /* centralizar na tela */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363); /* sombra na parte inferior */
+
+}
+
+select#flista {
+    width: 150px;
+}
+
+footer {
+    color: white;
+    text-align: center; 
+    font-style: italic; /* texto itálico */
+}
+------------------------------------------------------------------------------------------------------
+script.js
+let num = document.querySelector('input#fnum')
+let lista = document.querySelector('select#flista')
+let res = document.querySelector('div#res')
+let valores = []
+
+
+function isNumero(n) {
+    if(Number(n) >=1 && Number(n) <= 100) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function inLista(n, l) {
+    if(l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    if(isNumero(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
+        res.innerHTML = '' 
+    } else {
+        window.alert('Valor inválido ou já encontrado na lista.')
+    }
+    num.value = ''
+    num.focus()
+}
+
+function finalizar() {
+    if (valores.length == 0) {
+        window.alert('Adicione valores antes de finalizar')
+    } else {
+        let tot  = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
+
+
+        for(let pos in valores) {
+            soma += valores[pos]
+            if(valores[pos] > maior) {
+                maior = valores[pos]
+            }
+            if(valores[pos] < menor) {
+                menor = valores[pos]
+            }
+        }
+        media = soma / tot
+
+
+        res.innerHTML = ''
+        res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados. </p>`
+        res.innerHTML += `<p> O maior valor informado foi ${maior}.</p>`
+        res.innerHTML += `<p> O menor valor informado foi ${menor}.</p>` 
+        res.innerHTML += `<p> A somando todos os valores, temos ${soma}.</p>`
+        res.innerHTML += `<p> A média dos valores digitados é ${media}.</p>` 
+    }
+}
+
+####################################################################################################
+
+#17 PRÓXIMOS PASSOS
+->Daqui pra frente
+functions
+objetos
+modularização
+RegEx
+JSON
+AJAX
+NodeJS
+
+->Declarar OBJETO
+let amigo = {nome:'José', sexo:'M', peso:85.4, engordar(p){}}
+
+
+Código
+objeto01.js
+let amigo = {nome: 'José',
+ sexo:'M',
+peso: 85.4,
+engordar(p=0){ /* Coloca ZERO caso não informe valor */
+    console.log('Engordou')
+    this.peso += p
+}}
+console.log(amigo)
+console.log(amigo.nome) /* Aqui só mostro o nome */
+console.log(`${amigo.nome} pesa ${amigo.peso} kg`)
+
+amigo.engordar(2) /* Aqui engorda 2 kg */
+
+console.log(`${amigo.nome} pesa agora ${amigo.peso} kg`)
+###################################################################################################
+
+
+FIM
