@@ -7,6 +7,8 @@ console.log(valores)
 for(let pos = 0; pos <valores.length; pos++) {
 	console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 }
+/* Linha em branoco */
+console.log("")
 
 // Jeito mais simplificado FOR IN
 for(let pos in valores) {
